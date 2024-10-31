@@ -33,6 +33,7 @@ jobs:
           npx jest Auth.test.js
           npx jest ErrorMiddleware.test.js
           npx jest HttpException.test.js 
+          npx jest db.test.js
 
 
 
