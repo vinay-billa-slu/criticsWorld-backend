@@ -35,6 +35,7 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           API_KEY: ${{ secrets.API_KEY }}
           APP_SECRET: ${{ secrets.APP_SECRET }}
+          
         run: |
           echo "Deploying with secrets and variables"
           # Your deploy command here, e.g., npm run deploy
