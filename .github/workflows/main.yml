@@ -32,6 +32,7 @@ jobs:
           cd test 
           npx jest Auth.test.js
           npx jest ErrorMiddleware.test.js
+          npx jest HttpException.test.js 
 
 
 
