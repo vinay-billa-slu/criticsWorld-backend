@@ -22,22 +22,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Build Project
-        run: npm run build
-
-      - name: Deploy
-        env:
-          DB_USERNAME: ${{ secrets.DB_USERNAME }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          API_KEY: ${{ secrets.API_KEY }}
-          APP_SECRET: ${{ secrets.APP_SECRET }}
           
+      - name: running test cases
         run: |
-          echo "Deploying with secrets and variables"
-          # Your deploy command here, e.g., npm run deploy
+          cd test 
+          npx jest Auth.test.js
+          npx jest ErrorMiddleware.test.js
+
+
 
