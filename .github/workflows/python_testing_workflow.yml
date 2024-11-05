@@ -1,0 +1,28 @@
+name: GitHub Actions Python Execution
+run-name: Testing Github Actions for Python script
+
+on: [push]
+
+
+jobs:
+  trail-python-run:
+    runs-on: ubuntu-latest
+    steps:
+      # Cloning the github to the runner system
+      - uses: actions/checkout@v4
+
+      # Installation of python on the runner system
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      
+      # Running some python commands to see the installation is as desired
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
+      # Run the Script in our case its the ascii_printer.py
+      - name: Run ascii_printer script and see the output
+        run: |
+          python ascii_printer.py

@@ -1,0 +1,15 @@
+name: Test Os Pull
+run-name: Testing Github Actions for git pull
+
+on: [push]
+
+jobs:
+  trail-ubuntu-run:
+    runs-on: ubuntu-latest
+    steps:
+      # Cloning the github to the runner system
+      - uses: actions/checkout@v4
+
+      - name: listing all files
+        run: |
+          ls -al
