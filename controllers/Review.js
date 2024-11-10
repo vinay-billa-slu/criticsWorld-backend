@@ -44,3 +44,22 @@ const deleteReview = async (body, user) => {
       throw new HttpException(true, 200, "No such review");
     }
   };
+
+  const getAllReviews = async (body) => {
+    const connection = await connectToDatabase();
+    // const q = "SELECT * FROM Review where MovieID=?";
+    // const q =
+    //   "SELECT Review.ReviewID, Review.UserID, User.FirstName, User.LastName, Review.MovieID, Movie.Title AS MovieTitle, Review.ReviewTitle, Review.Rating, Review.Timestamp FROM Review JOIN User ON Review.UserID = User.UserID JOIN Movie ON Review.MovieID = Movie.MovieID WHERE Review.MovieID=?;";
+    const q =
+      "SELECT Review.ReviewID, Review.UserID, User.FirstName, User.LastName, Review.MovieID, Movie.Title AS MovieTitle, Review.ReviewTitle, Review.Rating, ROUND(AVG(Review.Rating)/5) AS AvgRating, Review.Timestamp FROM Review JOIN User ON Review.UserID = User.UserID JOIN Movie ON Review.MovieID = Movie.MovieID WHERE Review.MovieID=? GROUP BY Review.ReviewID, Review.UserID, User.FirstName, User.LastName, Review.MovieID, Movie.Title, Review.ReviewTitle, Review.Timestamp;";
+    const [rows] = await connection.query(q, [body.MovieID]);
+    return rows;
+  };
+
+  
+  module.exports = {
+    addReview,
+    getAllReviews,
+    deleteReview,
+  };
+  
