@@ -28,3 +28,19 @@ const addReview = async (body) => {
     }
   }
 };
+
+const deleteReview = async (body, user) => {
+    const connection = await connectToDatabase();
+    const review = await getReview(body);
+    if (review) {
+      if (review.UserID == user.UserID || user.isAdmin) {
+        await connection.query("DELETE from Review where ReviewID=?", [
+          body.ReviewID,
+        ]);
+      } else {
+        throw new HttpException(false, 401, "You are not allowed");
+      }
+    } else {
+      throw new HttpException(true, 200, "No such review");
+    }
+  };
