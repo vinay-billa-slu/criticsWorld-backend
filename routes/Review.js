@@ -11,4 +11,14 @@ router.post("/addReview", verifyToken, async (req, res, next) => {
   }
 });
 
+router.post("/getAllReviews", verifyToken, async (req, res, next) => {
+  try {
+    const result = await reviewController.getAllReviews(req.body);
+    res.status(200).send({ success: true, data: result, total: result.length });
+  } catch (error) {    
+    next(error);
+  }
+});
+
+
 module.exports = router;
