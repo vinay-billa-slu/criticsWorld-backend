@@ -55,11 +55,49 @@ const deleteReview = async (body, user) => {
     const [rows] = await connection.query(q, [body.MovieID]);
     return rows;
   };
+  const updateReview = async (body, user) => {
+    const schema = Joi.object().keys({
+      UserID: Joi.number().required(),
+      MovieID: Joi.number().required(),
+      ReviewID: Joi.number().required(),
+      ReviewTitle: Joi.string().required(),
+      Rating: Joi.number().greater(0).less(6).required(),
+    });
+  
+    const result = schema.validate(body);
+  
+    if (result.error) {
+      throw new HttpException(false, 400, result.error.details[0].message);
+    } else {
+      if (user.isAdmin || body.UserID == user.UserID) {
+        const connection = await connectToDatabase();
+        const [rows] = await connection.query(
+          "SELECT * FROM Review where ReviewID=? AND UserID=? AND MovieID=?",
+          [body.ReviewID, body.UserID, body.MovieID]
+        );
+        const review = rows.length > 0 ? rows[0] : null;
+  
+        if (review) {
+          const values = [body.ReviewTitle, body.Rating, body.ReviewID];
+  
+          await connection.query(
+            "UPDATE Review SET ReviewTitle=?, Rating=? where ReviewID=?",
+            values
+          );
+        } else {
+          throw new HttpException(true, 200, "No such review");
+        }
+      } else {
+        throw new HttpException(false, 401, "You are not allowed");
+      }
+    }
+  };
 
   
   module.exports = {
     addReview,
     getAllReviews,
     deleteReview,
+    updateReview,
   };
   
