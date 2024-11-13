@@ -1,0 +1,123 @@
+[
+    {
+        "title": "Jawan",
+        "date": "2023",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/1701588190660--jawan-movie.jpg",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "The Northman",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/upcoming-1.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "Doctor Strange in the Multiverse of Madness",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/upcoming-2.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "Memory",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/upcoming-3.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "The Unbearable Weight of Massive Talent",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/upcoming-4.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "Sonic the Hedgehog 2",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/movie-1.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "Morbius",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/movie-2.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    },
+    {
+        "title": "The Adam Project",
+        "date": "2022",
+        "duration": "137",
+        "quality": "HD",
+        "rating": "8.5",
+        "image": "/images/movie-3.png",
+        "storyline": "This adventure takes you on a rollercoaster ride through exotic locales, explosive confrontations, and a maze of intrigue where survival demands courage, cunning, and a thirst for justice.",
+        "genre": [
+            "Comedy",
+            "Action",
+            "Adventure",
+            "Science Fiction"
+        ]
+    }
+
+]
