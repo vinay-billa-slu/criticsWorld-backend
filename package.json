@@ -11,6 +11,7 @@
   "author": "Vinay Billa",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "express": "^4.21.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",

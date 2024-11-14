@@ -35,8 +35,9 @@ jobs:
           npx jest HttpException.test.js 
           npx jest db.test.js
           npx jest Adduser.test.js
-          npx jest Searchmovie.test.js
-          npx jest Updatereview.test.js
+          npx jest Searchmovie.test.js 
+          npx jest Updatereview.test.js 
+          
 
 
 
