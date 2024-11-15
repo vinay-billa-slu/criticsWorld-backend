@@ -1,0 +1,43 @@
+
+# .github/workflows/deploy.yml
+name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: production  # Example variable
+      DEBUG_MODE: true
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+          
+      - name: running test cases
+        run: |
+          cd test 
+          npx jest Auth.test.js
+          npx jest ErrorMiddleware.test.js
+          npx jest HttpException.test.js 
+          npx jest db.test.js
+          npx jest User.test.js
+          npx jest Searchmovie.test.js 
+          npx jest Review.test.js 
+        
+
+
+
