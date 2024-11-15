@@ -11,8 +11,8 @@ const compiledTemplate = handlebars.compile(source);
 const client = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "billavinay2012@gmail.com", // you email
-    pass: "bhohxbsebhevhmax", // generate a password in gmail settings
+    user: "", // you email
+    pass: "", // generate a password in gmail settings
   },
   host: "smtp.gmail.com",
   post: 465,
@@ -26,7 +26,7 @@ function sendMail(email, link) {
 
   client.sendMail(
     {
-      from: "resetpassword@criticsworld.com", // your email
+      from: "", // your email
       to: email, // user email
       subject: "Reset Password",
       html: compiledTemplate(payload),
