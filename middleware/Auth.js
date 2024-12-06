@@ -19,4 +19,19 @@ const verifyToken = (request, response, next) => {
         message: "You are not authenticated.",
       });
     }
-  }
+    request.user = user;
+    next();
+  });
+};
+
+const verifyTokenAndAdmin = (request, response, next) => {
+  verifyToken(request, response, () => {
+    // Early return to handle unauthorized users
+    return request.user.isAdmin 
+      ? next() 
+      : response.status(401).json({
+          success: false,
+          message: "You are not allowed.",
+        });
+  });
+};
