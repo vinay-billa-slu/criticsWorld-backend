@@ -50,3 +50,20 @@ router.post("/deleteReview", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+// Update a review
+router.post("/updateReview", verifyToken, async (req, res, next) => {
+  try {
+    console.log("Updating review:", req.body); // Log the incoming request
+    const result = await reviewController.updateReview(req.body, req.user);
+    res.status(200).send({
+      success: true,
+      message: "Review has been updated",
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+module.exports = router;
