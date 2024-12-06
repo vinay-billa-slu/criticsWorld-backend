@@ -56,4 +56,6 @@ const userWithToken = (request, response, next) => {
       if (user) request.user = user;
     });
   }
-}
+  
+  next();
+};
