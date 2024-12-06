@@ -59,3 +59,10 @@ const userWithToken = (request, response, next) => {
   
   next();
 };
+
+module.exports = {
+  verifyToken,
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+  userWithToken,
+};
