@@ -35,3 +35,15 @@ const verifyTokenAndAdmin = (request, response, next) => {
         });
   });
 };
+
+const verifyTokenAndAuthorization = (request, response, next) => {
+  verifyToken(request, response, () => {
+    // Use a ternary to check the condition and call next or return an error
+    return (request.user.id === request.params.id || request.user.isAdmin) 
+      ? next() 
+      : response.status(401).json({
+          success: false,
+          message: "You are not allowed.",
+        });
+  });
+};
