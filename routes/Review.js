@@ -39,3 +39,14 @@ router.post("/getReview", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+// Delete a review
+router.post("/deleteReview", verifyToken, async (req, res, next) => {
+  try {
+    console.log("Deleting review:", req.body); // Log the incoming request
+    await reviewController.deleteReview(req.body, req.user);
+    res.status(200).send({ success: true, message: "Review has been deleted" });
+  } catch (error) {
+    next(error);
+  }
+});
