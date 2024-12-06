@@ -11,5 +11,12 @@ const verifyToken = (request, response, next) => {
       message: "You are not authenticated.",
     });
   }
-};
 
+  jwt.verify(authToken, config.JWT_SEC_KEY, (error, user) => {
+    if (error) {
+      return response.status(401).json({
+        success: false,
+        message: "You are not authenticated.",
+      });
+    }
+  }
