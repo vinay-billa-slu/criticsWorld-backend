@@ -47,3 +47,13 @@ const verifyTokenAndAuthorization = (request, response, next) => {
         });
   });
 };
+
+const userWithToken = (request, response, next) => {
+  const authToken = request.headers.token;
+
+  if (authToken) {
+    jwt.verify(authToken, config.JWT_SEC_KEY, (error, user) => {
+      if (user) request.user = user;
+    });
+  }
+}
