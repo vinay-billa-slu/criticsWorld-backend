@@ -28,3 +28,14 @@ router.post("/getAllReviews", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+// Get a specific review
+router.post("/getReview", verifyToken, async (req, res, next) => {
+  try {
+    console.log("Fetching review for:", req.body); // Log the incoming request
+    const result = await reviewController.getReview(req.body);
+    res.status(200).send({ success: true, data: result });
+  } catch (error) {
+    next(error);
+  }
+});
