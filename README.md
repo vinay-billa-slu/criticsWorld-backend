@@ -24,7 +24,7 @@ CriticsWorld Backend is a Node.js-based backend application designed to manage m
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/vinay-billa-slu/criticsworld-backend.git
-   cd criticsworld-backend
+   cd criticsWorld-backend
    ```
 
 2. **Install Dependencies**:
@@ -32,35 +32,19 @@ CriticsWorld Backend is a Node.js-based backend application designed to manage m
    npm install
    ```
 
-3. **Configure Environment Variables**:
-   Create a `.env` file in the root directory and add the following variables:
-   ```
-   DB_HOST=your-database-host
-   DB_USER=your-database-username
-   DB_PASSWORD=your-database-password
-   DB_NAME=criticsworld
-   JWT_SECRET=your-jwt-secret
-   PORT=8081
-   ```
-
-4. **Initialize the Database**:
+3. **Initialize the Database**:
    Import the `schema.sql` file into your MySQL database:
    ```bash
    mysql -u root -p criticsworld < schema.sql
    ```
 
-5. **Run the Application**:
+4. **Run the Application**:
    ```bash
    npm start
    ```
    The application will start on `http://localhost:8081`.
 
-6. **Run Tests**:
-   ```bash
-   npm test
-   ```
-
-7. **Docker Setup** (Optional):
+5. **Docker Setup** (Optional):
    Build and run the application using Docker:
    ```bash
    docker-compose up --build
@@ -109,33 +93,24 @@ criticsworld-backend/
 - `POST /api/auth/resetPassword`: Reset the user's password.
 
 ### User Management
-- `GET /api/user`: Get all users (Admin only).
-- `GET /api/user/:id`: Get a specific user.
-- `PUT /api/user/:id`: Update user details.
-- `DELETE /api/user/:id`: Delete a user.
+- `GET /api/user/getAllUsers`: Get all users (Admin only).
+- `GET /api/user/getUser`: Get a specific user.
+- `PUT /api/user/updateUser`: Update user details.
+- `DELETE /api/user/deleteUser`: Delete a user.
 
 ### Movie Management
-- `POST /api/movie`: Add a new movie (Admin only).
-- `GET /api/movie`: Get all movies.
-- `GET /api/movie/:id`: Get details of a specific movie.
-- `PUT /api/movie/:id`: Update movie details (Admin only).
-- `DELETE /api/movie/:id`: Delete a movie (Admin only).
+- `POST /api/movie/addMovie`: Add a new movie (Admin only).
+- `GET /api/movie/getAllMovies`: Get all movies.
+- `GET /api/movie/getMovie`: Get details of a specific movie.
+- `PUT /api/movie/updateMovie`: Update movie details (Admin only).
+- `DELETE /api/movie/deleteMovie`: Delete a movie (Admin only).
 
 ### Review Management
-- `POST /api/review`: Add a review for a movie.
-- `GET /api/review/:movieId`: Get all reviews for a movie.
-- `PUT /api/review/:id`: Update a review.
-- `DELETE /api/review/:id`: Delete a review.
-
-### File Upload
-- `POST /upload`: Upload a file (e.g., movie poster).
-
-## Testing
-
-Unit tests are written using Jest and Supertest. To run the tests:
-```bash
-npm test
-```
+- `POST /api/review/addReview`: Add a review for a movie.
+- `GET /api/review/getAllReviews`: Get all reviews for a movie.
+- `GET /api/review/getReview`: Get a review.
+- `PUT /api/review/updateReview`: Update a review.
+- `DELETE /api/review/deleteReview`: Delete a review.
 
 ## Docker Deployment
 
